@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --krishi-bg: #F5F4EC;
+    --krishi-surface: #FFFFFF;
+    --krishi-surface-soft: #EDF2E8;
+    --krishi-ink: #132115;
+    --krishi-muted: #4C5C4E;
+    --krishi-primary: #2E7D32;
+    --krishi-primary-dark: #1B5E20;
+    --krishi-border: #DCE3D4;
+  }
+
+  html {
+    font-family: "Manrope", "Noto Sans Devanagari", system-ui, -apple-system, sans-serif;
+    background-color: var(--krishi-bg);
+    color: var(--krishi-ink);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: "Bricolage Grotesque", "Noto Sans Devanagari", system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Hide horizontal scrollbar while keeping smooth touch & wheel scrolling */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes leafScanSweep {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(420%);
+    opacity: 0.25;
+  }
+}
+
+.animate-leaf-scan {
+  animation: leafScanSweep 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes brandSheenSweep {
+  0%, 65% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateX(420%);
+    opacity: 0;
+  }
+}
+
+.animate-brand-sheen {
+  animation: brandSheenSweep 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes brandTextGlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.text-brand-shimmer {
+  background: linear-gradient(110deg, #2E7D32 0%, #43A047 38%, #1B5E20 65%, #2E7D32 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: brandTextGlow 5.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-leaf-scan,
+  .animate-brand-sheen,
+  .text-brand-shimmer {
+    animation: none;
+  }
+  .text-brand-shimmer {
+    color: #2E7D32;
+    background: none;
+  }
+}

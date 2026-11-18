@@ -1,0 +1,6 @@
+{
+  "name": "KrishiRakshak — AI Plant Disease Detection System",
+  "description": "Photo lo, bimari pehchano. AI-powered crop leaf disease detection, severity assessment, and simple organic and chemical treatment advice for Indian farmers in Hindi and English.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
